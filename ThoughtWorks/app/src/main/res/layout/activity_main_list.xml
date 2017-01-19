@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include
+        android:id="@+id/westeros_list_header"
+        layout="@layout/westeros_list_header_layout" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/page_nos"
+        android:layout_below="@id/westeros_list_header"
+        android:cacheColorHint="@android:color/transparent"
+        android:listSelector="@android:color/transparent"
+        android:overScrollMode="never"
+        android:scrollbars="none"
+        app:layoutManager="LinearLayoutManager"
+        tools:listitem="@layout/item_king" />
+
+    <RadioGroup
+        android:id="@+id/page_nos"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="4dp"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        app:layout_anchor="@id/recycler_view"
+        app:layout_anchorGravity="bottom" />
+
+</RelativeLayout>
